@@ -1,6 +1,8 @@
 {
     "files.exclude": {
         "**/.git": true,
+        "**/.vscode": true,
+        "**/drafted/configur.py": true
     },
     "search.useIgnoreFiles": true
 }
