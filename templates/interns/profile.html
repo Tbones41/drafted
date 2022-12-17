@@ -1,0 +1,50 @@
+{% extends '../main.html' %}
+
+{% block content %}
+
+<hr>
+<div class="container">
+    <div class="card" style="width: 72rem;">
+        <div class="card-body">
+            
+                <div class="d-flex align-items-center mb-4">
+                    <a href="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-2.webp">
+                        <div class="flex-shrink-0 mr-3">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-2.webp"  class="img-fluid rounded-circle" style="width: 90px;">
+                        </div>
+                    </a>
+                    <h4 class="card-title">{{ name }} <small class="card-subtitle text-muted">{{ age }}, {{ gender }}</small></h4>
+                </div>
+            
+            <h6 class="card-text"><b>Location: </b>{{ location }}</h6>
+            <h6 class="card-subtitle mt-4 mb-2">Work</h6>
+            <div>
+                <ul class="list-group list-group-flush">
+                    {% for i in work %}
+                        <li class="list-group-item">
+                            <h6 class="text-muted font-italic"><small>{{ i.date_started}} - {{i.date_ended}}</small></h6>
+                            <h6 class="text-uppercase">{{ i.workplace }} <small class="text-capitalize">({{ i.job_title }})</small></h6>
+                            <h6 class="text-muted">{{ i.sector}}</h6>
+                        </li>
+                    {% endfor %}
+                </ul>
+
+                
+                <h6 class="card-subtitle mt-4 mb-2">Education</h6>
+                <ul class="list-group list-group-flush">
+                    {% for i in edu %}
+                        <li class="list-group-item">
+                            <h6 class="text-muted font-italic"><small>{{ i.date_started}} - {{i.date_ended}}</small></h6>
+                            <h6 class="text-uppercase">{{ i.school }} <small class="text-capitalize">({{ i.Level_of_edu }})</small></h6>
+                            <h6 class="text-muted">{{ i.degree}} - {{ i.grade }}</h6>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+      </div>
+</div>
+    
+<hr>
+
+{% endblock %}
